@@ -120,9 +120,14 @@ python3 src/scripts/tt_multi_models_pact.py \
     --split_log_file_dir data/processed/split_logs/chocolate/ \
     --model models/chocolate \
     --device_name my_gpu
-
+```
 ## NOTE: we stop here as we don't want to run Ansor unnessesarally
 
+We gathered the results manually. To find times, go to your `data_` folders. 
+To view the original time and the Ansor tuned time (with or without droplet), look in `raw/chocolate/tuning_info.json`
+To view the Transfer Tuning times of 
+
+``` sh
 # Compare how well Ansor performs given the same search time
 # as well as go beyond see how much time is required to match our time
 # this stage will take a while as we need to take all of the time

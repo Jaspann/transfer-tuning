@@ -41,22 +41,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     tt_networks = {
-
-        "resnet50": ["mobilenetv2"],
-        "mobilenetv2": ["resnet50"],
-
-
-    #     "resnet18": ["resnet50", "alexnet", "mobilenetv2", "googlenet", "mnasnet1_0"],
-    #     "resnet50": ["resnet18", "alexnet", "mobilenetv2", "googlenet", "mnasnet1_0"],
-    #     "alexnet": ["resnet18", "resnet50", "mobilenetv2", "googlenet", "mnasnet1_0"],
-    # #     "vgg16": ["googlenet"],
-    #     "mobilenetv2": ["resnet18", "resnet50", "alexnet", "googlenet", "mnasnet1_0"],
-    #     "googlenet": ["resnet18", "resnet50", "alexnet", "mobilenetv2", "mnasnet1_0"],
-    #     "mnasnet1_0": ["resnet18", "resnet50", "alexnet", "mobilenetv2", "googlenet"],
-    # #     # "efficentnetb0": ["efficentnetb4"],
-    # #     # "efficentnetb4": ["efficentnetb0"],
-    # #     # "bert-base-uncased-seq_class-256": ["mobilebert-base-uncased-seq_class-256"],
-    # #     # "mobilebert-base-uncased-seq_class-256": ["bert-base-uncased-seq_class-256"],
+        "resnet18": ["resnet50", "alexnet", "mobilenetv2", "googlenet", "mnasnet1_0"],
+        "resnet50": ["resnet18", "alexnet", "mobilenetv2", "googlenet", "mnasnet1_0"],
+        "alexnet": ["resnet18", "resnet50", "mobilenetv2", "googlenet", "mnasnet1_0"],
+    #     "vgg16": ["googlenet"],
+        "mobilenetv2": ["resnet18", "resnet50", "alexnet", "googlenet", "mnasnet1_0"],
+        "googlenet": ["resnet18", "resnet50", "alexnet", "mobilenetv2", "mnasnet1_0"],
+        "mnasnet1_0": ["resnet18", "resnet50", "alexnet", "mobilenetv2", "googlenet"],
+    #     # "efficentnetb0": ["efficentnetb4"],
+    #     # "efficentnetb4": ["efficentnetb0"],
+    #     # "bert-base-uncased-seq_class-256": ["mobilebert-base-uncased-seq_class-256"],
+    #     # "mobilebert-base-uncased-seq_class-256": ["bert-base-uncased-seq_class-256"],
     }
 
     # output_dir = os.path.join(
