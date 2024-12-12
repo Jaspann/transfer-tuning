@@ -38,11 +38,20 @@ This project works best in a Docker container, for which we provide a basic temp
 
 You can build and run the container with:
 
+Transfer-Tuning with Ansor:
 ``` sh
 docker build -t tt_artifact:latest -f docker/Dockerfile.main_cpu .
 docker run \
-    -v ${PWD}/transfer-tuning/:/workspace \
+    -v ${PWD}/:/workspace \
     -ti tt_artifact:latest bash -i
+```
+
+Transfer-Tuning with Ansor + AutoTVM:
+``` sh
+docker build -t tt_artifact_combo:latest -f docker/Dockerfile.main_cpu_combo .
+docker run \
+    -v ${PWD}/:/workspace \
+    -ti tt_artifact_combo:latest bash -i
 ```
 
 This will install the required dependencies, build TVM, and ensure most environment variables are set correctly.
@@ -57,9 +66,16 @@ python3 src/scripts/generate_model_set.py \
 # Auto-schedule models using Ansor
 python3 src/scripts/autoschedule_models.py \
    --model_path models/chocolate \
-   --ntrials 20000 \
+   --ntrials 5000 \
    --device_name xeon_cpu \
    --output_dir data/raw/chocolate
+
+# Run Droplet Search
+python3 src/scripts/autoschedule_models.py \
+   --model_path models/chocolate \
+   --device_name xeon_cpu \
+   --output_dir data/raw/chocolate \
+   --droplet_search
 
 # use the Ansor internal tool to extract the top performing auto-schedules
 # (done internally anyway, but this reduces parse time)

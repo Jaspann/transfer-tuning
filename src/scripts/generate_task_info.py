@@ -21,7 +21,7 @@ def get_model_info(
         device_info["target"],
         device_info["host"],
     )
-    wkl_classes, _ = get_workload_info(tasks)
+    wkl_classes, _ = get_workload_info(tasks, verbose=False, skip_error=True)
 
     return (wkl_classes,)
 

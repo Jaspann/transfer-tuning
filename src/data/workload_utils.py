@@ -8,7 +8,11 @@ from typing import List, Union, Dict
 from hashlib import sha256
 import tvm
 from tvm import auto_scheduler, relay
-from tvm.relay.backend.compile_engine import get as get_compile_engine
+# Use for original TT
+# from tvm.relay.backend.compile_engine import get as get_compile_engine
+
+# Use for droplet
+from tvm.relay.backend.te_compiler import get as get_compile_engine
 
 
 def args_from_func_string(s):

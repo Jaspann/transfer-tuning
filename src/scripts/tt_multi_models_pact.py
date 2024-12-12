@@ -41,17 +41,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     tt_networks = {
-        "resnet18": ["resnet50"],
-        "resnet50": ["googlenet"],
-        "alexnet": ["vgg16"],
-        "vgg16": ["googlenet"],
-        "mobilenetv2": ["efficentnetb4"],
-        "googlenet": ["resnet50"],
-        "mnasnet1_0": ["googlenet"],
-        "efficentnetb0": ["efficentnetb4"],
-        "efficentnetb4": ["efficentnetb0"],
-        "bert-base-uncased-seq_class-256": ["mobilebert-base-uncased-seq_class-256"],
-        "mobilebert-base-uncased-seq_class-256": ["bert-base-uncased-seq_class-256"],
+        # "resnet18": ["resnet50"],
+        "resnet50": ["googlenet", "alexnet"],
+        "alexnet": ["googlenet", "resnet50"],
+    #     "vgg16": ["googlenet"],
+    #     # "mobilenetv2": ["efficentnetb4"],
+        "googlenet": ["resnet50", "alexnet"],
+    #     # "mnasnet1_0": ["googlenet"],
+    #     # "efficentnetb0": ["efficentnetb4"],
+    #     # "efficentnetb4": ["efficentnetb0"],
+    #     # "bert-base-uncased-seq_class-256": ["mobilebert-base-uncased-seq_class-256"],
+    #     # "mobilebert-base-uncased-seq_class-256": ["bert-base-uncased-seq_class-256"],
     }
 
     # output_dir = os.path.join(

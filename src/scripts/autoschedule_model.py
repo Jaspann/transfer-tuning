@@ -4,12 +4,36 @@ import argparse
 import json
 from datetime import datetime
 from typing import Union, Dict
+import pickle
 
 from src.scripts.utils import get_device
-from src.data.autosched_utils import tune_and_evaluate, compile_tuned_graph
+from src.data.autosched_utils import tune_and_evaluate, compile_tuned_graph, run_droplet_search
 from src.inference.tvm_inference import evaluate_untuned_ansor
 from src.models.load_model import load_tvm_model
 
+
+def pre_droplet_search(
+    model_name,
+    output_dir,
+    device_info,
+    device_name,
+):
+    
+    batch_size = 1
+    layout = "NCHW"
+    target = device_info["target"]
+
+    log_file = os.path.join(
+        output_dir,
+        "%s£-%s-B%d-%s-%s.json" % (model_name, layout, batch_size, target, device_name),
+    )
+
+    target = None
+    with open(f'data/droplet/{model_name}_task_target.pkl', 'rb') as file:
+        pickle_string = file.read()
+        target = pickle.loads(pickle_string)
+
+    run_droplet_search(log_file=log_file, target=target)
 
 def tune_model(
     model_name,
@@ -92,6 +116,7 @@ def tune_model(
         ntrials=ntrials,
         timeout=timeout,
         stop_points=stop_points,
+        model_name=model_name,
     )
 
     # if tt_file:

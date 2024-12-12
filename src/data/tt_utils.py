@@ -13,7 +13,12 @@ from tvm import auto_scheduler
 from tvm.auto_scheduler.search_task import SearchTask
 from tvm.auto_scheduler import RecordReader
 from tvm.auto_scheduler.measure import local_builder_build, MeasureInput, local_run
-from tvm.relay.backend.compile_engine import get as get_compile_engine
+
+# v0.8
+# from tvm.relay.backend.compile_engine import get as get_compile_engine
+
+# v0.16
+from tvm.relay.backend.te_compiler import get as get_compile_engine
 
 from src.inference.tvm_inference import (
     tvm_inference_subprocess,

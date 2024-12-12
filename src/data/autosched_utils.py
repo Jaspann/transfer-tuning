@@ -1,10 +1,12 @@
 #!/usr/bin/env python
+import pickle
 import numpy as np
 import time
 import multiprocessing
 from typing import List
 import shutil
 import logging
+import os
 
 from tvm import relay, auto_scheduler
 import tvm.relay.testing
@@ -106,6 +108,20 @@ def tasks_tune(
     else:
         p.join()
     # tuner.tune(tune_option)
+    auto_scheduler.task_scheduler.droplet_exploitation(log_file, target)
+    
+    tuning_time = time.time() - start
+
+    return tuning_time
+
+def run_droplet_search(
+    log_file,
+    target,
+):
+    start = time.time()
+
+    auto_scheduler.task_scheduler.droplet_exploitation(log_file, target)
+
     tuning_time = time.time() - start
 
     return tuning_time
@@ -125,6 +141,7 @@ def tune_and_evaluate(
     workload_pool=None,
     timeout: int = None,
     stop_points: List[float] = None,
+    model_name: str = None,
 ):
     print("Extract tasks...")
     tasks, task_weights = auto_scheduler.extract_tasks(
@@ -134,6 +151,15 @@ def tune_and_evaluate(
         device_info["host"],
         hardware_params,
     )
+
+    folder_name = "data/droplet"
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+
+    if model_name is not None:
+        # Save tasks to pickle
+        with open(f"data/droplet/{model_name}_task_target.pkl", "wb") as f:
+            pickle.dump(tasks[0].target, f)
 
     if len(tasks) < 1:
         raise ValueError("Expected to have at least one task to run")

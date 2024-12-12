@@ -138,7 +138,7 @@ def get_model_info(
         full_wkl_ids,
         wkl_full_params,
         wkl_names,
-    ) = get_workload_info_and_params(tasks, readable_names=True)
+    ) = get_workload_info_and_params(tasks, readable_names=True, skip_error=True)
 
     return (
         mod,

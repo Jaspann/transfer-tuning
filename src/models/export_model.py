@@ -92,33 +92,18 @@ def pytorch_exporter(model_name, model_func, in_shape_list, model_data, output_d
     }
     input_names = list(model_data["test_input_data"].keys())
 
-    if "stylegan2" in model_name:
-        t = (torch.randn((1, 512), dtype=torch.float32).cpu(),)
-        model = torch.jit.trace(model, t).eval()
-
     # exporting to ONNX seems to be more resilient
     with tempfile.NamedTemporaryFile(suffix=".onnx") as onnx_file_h:
         onnx_file = onnx_file_h.name
-        if "stylegan2" in model_name:
-            # torch.onnx.export(
-            #     model,
-            #     *test_input_datas,
-            #     onnx_file,
-            #     input_names=input_names,
-            #     opset_version=10,
-            #     export_params=True,
-            # )
-            mod, params = relay.frontend.from_pytorch(model, [("input0", [1, 512])])
-        else:
-            torch.onnx.export(
-                model, test_input_datas, onnx_file, input_names=input_names
-            )
-            onnx_model = onnx.load(onnx_file)
+        torch.onnx.export(
+            model, test_input_datas, onnx_file, input_names=input_names
+        )
+        onnx_model = onnx.load(onnx_file)
 
-            # export to TVM
-            mod, params = relay.frontend.from_onnx(
-                onnx_model, model_data["input_shapes"]
-            )
+        # export to TVM
+        mod, params = relay.frontend.from_onnx(
+            onnx_model, model_data["input_shapes"]
+        )
 
         relay_file = model_name + ".json"
         relay_params = model_name + ".params"

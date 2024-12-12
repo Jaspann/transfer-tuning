@@ -335,6 +335,7 @@ def get_workload_info(
     workload_classes = dict()
     full_wkl_ids = dict()  # deal with TVMs new verbose format
     for i, tsk in enumerate(tasks):
+        print(f"Checking workload {i}/{len(tasks)}")
         tgt_wkl_id = tsk.workload_key
         tgt_dag = str(tsk.compute_dag)
         tgt_wkl_id_sha = sha256(tgt_wkl_id.encode("utf-8")).hexdigest()

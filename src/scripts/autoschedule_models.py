@@ -5,7 +5,7 @@ import json
 
 from src.models.load_model import load_tvm_model
 from src.scripts.utils import get_device, setup_tt_logger
-from src.scripts.autoschedule_model import tune_model
+from src.scripts.autoschedule_model import tune_model, pre_droplet_search
 
 
 def main(args):
@@ -48,26 +48,34 @@ def main(args):
             # tt_data = list(data.values())[0]
             # get first value
         try:
-            tuned_time, tuning_time, untuned_time = tune_model(
-                model_name,
-                args.model_path,
-                args.output_dir,
-                device_info,
-                args.device_name,
-                args.ntrials,
-                output_csv_file,
-                args.timeout,
-                tt_file,
-                minute_check=args.minute_check,
-            )
-            results[model_name] = {
-                "tuned_time": tuned_time,
-                "tuning_time": tuning_time,
-                "untuned_time": untuned_time,
-            }
-            logger.info(
-                f"{model_name}: tuned_time: {tuned_time}, tuning_time: {tuning_time}"
-            )
+            if args.droplet_search:
+                pre_droplet_search(
+                    model_name,
+                    args.output_dir,
+                    device_info,
+                    args.device_name,
+                )
+            else:
+                tuned_time, tuning_time, untuned_time = tune_model(
+                    model_name,
+                    args.model_path,
+                    args.output_dir,
+                    device_info,
+                    args.device_name,
+                    args.ntrials,
+                    output_csv_file,
+                    args.timeout,
+                    tt_file,
+                    minute_check=args.minute_check,
+                )
+                results[model_name] = {
+                    "tuned_time": tuned_time,
+                    "tuning_time": tuning_time,
+                    "untuned_time": untuned_time,
+                }
+                logger.info(
+                    f"{model_name}: tuned_time: {tuned_time}, tuning_time: {tuning_time}"
+                )
         except Exception as e:
             logger.exception(f"error for model {model_name}")
             pass
@@ -105,6 +113,7 @@ if __name__ == "__main__":
         default=None,
         help="If set, will use the search time from running TT, used to limit tuning time",
     )
+    parser.add_argument("--droplet_search", action="store_true", help="If set, apply droplet search instead to the model")
     parser.add_argument("--minute_check", dest="minute_check", action="store_true")
 
     args = parser.parse_args()

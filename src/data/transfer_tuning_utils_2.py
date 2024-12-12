@@ -7,7 +7,13 @@ from typing import List, Optional, Dict
 import tvm
 import time
 from tvm.auto_scheduler.search_task import SearchTask
-from tvm.relay.backend.compile_engine import get as get_compile_engine
+
+# v0.8
+# from tvm.relay.backend.compile_engine import get as get_compile_engine
+
+# v0.16
+from tvm.relay.backend.te_compiler import get as get_compile_engine
+
 from .tt_utils import (
     estimate_iterations,
     test_untuned_workload,
