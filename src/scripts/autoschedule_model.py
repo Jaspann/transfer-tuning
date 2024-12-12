@@ -29,7 +29,7 @@ def pre_droplet_search(
     )
 
     target = None
-    with open(f'data/droplet/{model_name}_task_target.pkl', 'rb') as file:
+    with open(f'{output_dir.split("/")[0]}/droplet/{model_name}_task_target.pkl', 'rb') as file:
         pickle_string = file.read()
         target = pickle.loads(pickle_string)
 
@@ -107,6 +107,7 @@ def tune_model(
             pass
 
     tuned_med, tuned_std, tuning_time = tune_and_evaluate(
+        output_dir,
         log_file,
         mod,
         params,

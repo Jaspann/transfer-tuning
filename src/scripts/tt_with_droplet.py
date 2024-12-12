@@ -11,8 +11,7 @@ subprocess.run([
 
 # Run Ansor using different trial counts
 
-# trail_counts = ['2500', '5000', '10000']
-trail_counts = ['2500']
+trail_counts = ['2500', '5000', '10000']
 for num_trials in trail_counts:
     print(f"Running Ansor with {num_trials} trials...")
     subprocess.run([
@@ -28,7 +27,7 @@ for num_trials in trail_counts:
     # Copy data to compare TT to TT + Droplet
     shutil.copytree(f'data_{num_trials}/raw/chocolate', f'data_{num_trials}_droplet/raw/chocolate')
 
-    # Also copy the models for TT and TT + Droplet bc we edit them later
+    # Also copy the models for TT and TT + Droplet because we edit them later
     shutil.copytree(f'models/chocolate', f'models_{num_trials}/chocolate')
     shutil.copytree(f'models/chocolate', f'models_{num_trials}_droplet/chocolate')
 

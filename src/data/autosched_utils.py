@@ -128,6 +128,7 @@ def run_droplet_search(
 
 
 def tune_and_evaluate(
+    output_dir,
     log_file,
     mod,
     params,
@@ -152,13 +153,14 @@ def tune_and_evaluate(
         hardware_params,
     )
 
-    folder_name = "data/droplet"
+    folder_name = os.path.join(output_dir.split("/")[0], "droplet")
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
     if model_name is not None:
         # Save tasks to pickle
-        with open(f"data/droplet/{model_name}_task_target.pkl", "wb") as f:
+        destination = os.path.join(folder_name, f"{model_name}_task_target.pkl")
+        with open(destination, "wb") as f:
             pickle.dump(tasks[0].target, f)
 
     if len(tasks) < 1:

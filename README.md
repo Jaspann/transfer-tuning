@@ -46,6 +46,7 @@ Before running, make sure you have the following configuration:
 - Ubuntu 20.04
 - Docker
 - nvidia-docker2
+- CUDA
 
 You can build and run the container with:
 
