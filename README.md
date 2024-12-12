@@ -1,41 +1,3 @@
-<!-- <br />
-<div align="center">
-    <img src="./docs/acm_available_1.1.png" alt="acm available" width="80" height="80">
-    <img src="./docs/artifacts_evaluated_reusable_v1_1.png" alt="acm evaluated and reusable" width="80" height="80">
-    <img src="./docs/results_reproduced_v1_1.png" alt="acm results reproduced" width="80" height="80">
-
-  <h3 align="center">Transfer-Tuning: Reusing Auto-Schedules for Efficient Tensor Program Code Generation</h3>
-
-  <p align="center">
-    Code artifact for our PACT 2022 paper.
-    <br />
-  </p>
-</div> -->
-
-<!-- ------------
-
-Find the [arXiv version here](https://arxiv.org/abs/2201.05587), and the [ACM version here](https://dl.acm.org/doi/10.1145/3559009.3569682).
-
-
-```
-@inproceedings{gibson_transfer_tuning_2022,
-  author = {Gibson, Perry and Cano, Jos{\'e}},
-  title = {{Transfer-Tuning: Reusing Auto-Schedules for Efficient Tensor Program Code Generation}},
-  booktitle = {2022 31st {{International Conference}} on {{Parallel Architectures}} and {{Compilation Techniques}} ({{PACT}})},
-  year = {2022},
-  location = {Chicago, IL},
-  numpages = {12},
-  publisher = {ACM},
-  address = {New York, NY, USA}
-}
-```
-
-
-Guide
-------------
-
-This project works best in a Docker container, for which we provide a basic template for. -->
-
 # Fork of Transfer-Tuning for CMPE-214 - GPU Arch and Prog 
 
 This is a modified README that streamlines instrucions for the project.
@@ -64,13 +26,13 @@ sudo docker run \
 
 This will install the required dependencies, build TVM, and ensure most environment variables are set correctly.
 
-### Run all the commands at once:
+## Run all the commands at once:
 
 ```sh
 python3 src/scripts/tt_with_droplet.py
 ```
 
-### Run the commands individually:
+## Or, run the commands individually:
 
 ``` sh
 # Export models to TVM format
@@ -78,6 +40,7 @@ python3 src/scripts/generate_model_set.py \
     --model_set chocolate
 
 # Auto-schedule models using Ansor
+# Note, do not change `my_gpu`, as it is a key defined in `src/scripts/device_info.json` to use CUDA with your Docker passthrough
 python3 src/scripts/autoschedule_models.py \
    --model_path models/chocolate \
    --ntrials 5000 \
@@ -124,8 +87,14 @@ python3 src/scripts/tt_multi_models_pact.py \
 ## NOTE: we stop here as we don't want to run Ansor unnessesarally
 
 We gathered the results manually. To find times, go to your `data_` folders. 
+
 To view the original time and the Ansor tuned time (with or without droplet), look in `raw/chocolate/tuning_info.json`
-To view the Transfer Tuning times of 
+and record the `tuned_time` and `untuned_time` for each model.
+
+To view the Transfer Tuning times of a model combination, go to `results/tt_multi_models/MODEL_BASE.json`
+and record the `tt_time` for each transfered tuning log.
+
+Rest of original readme:
 
 ``` sh
 # Compare how well Ansor performs given the same search time
@@ -143,6 +112,47 @@ python3 src/scripts/autoschedule_models.py \
 # Plot the results
 python3 src/visualization/visualize.py
 ```
+
+
+<br />
+<div align="center">
+    <img src="./docs/acm_available_1.1.png" alt="acm available" width="80" height="80">
+    <img src="./docs/artifacts_evaluated_reusable_v1_1.png" alt="acm evaluated and reusable" width="80" height="80">
+    <img src="./docs/results_reproduced_v1_1.png" alt="acm results reproduced" width="80" height="80">
+
+  <h3 align="center">Transfer-Tuning: Reusing Auto-Schedules for Efficient Tensor Program Code Generation</h3>
+
+  <p align="center">
+    Code artifact for our PACT 2022 paper.
+    <br />
+  </p>
+</div>
+
+------------
+
+Find the [arXiv version here](https://arxiv.org/abs/2201.05587), and the [ACM version here](https://dl.acm.org/doi/10.1145/3559009.3569682).
+
+
+```
+@inproceedings{gibson_transfer_tuning_2022,
+  author = {Gibson, Perry and Cano, Jos{\'e}},
+  title = {{Transfer-Tuning: Reusing Auto-Schedules for Efficient Tensor Program Code Generation}},
+  booktitle = {2022 31st {{International Conference}} on {{Parallel Architectures}} and {{Compilation Techniques}} ({{PACT}})},
+  year = {2022},
+  location = {Chicago, IL},
+  numpages = {12},
+  publisher = {ACM},
+  address = {New York, NY, USA}
+}
+```
+
+
+Guide
+------------
+
+This project works best in a Docker container, for which we provide a basic template for.
+
+
 
 The results will vary depending on the hardware platform you run on, however you should observe the overall trend that transfer-tuning can provide speedups to models, while providing said speedups in less time than Ansor.
 
