@@ -14,22 +14,35 @@ from tvm.contrib.debugger.debug_executor import GraphModuleDebug
 
 
 def get_target(device_info):
+    number = 3
+    repeat = 1
+    min_repeat_ms = 150 
+    timeout = 10
+
     if "remote" == device_info["host_type"]:
         runner = auto_scheduler.RPCRunner(
             device_info["key"],
             device_info["address"],
             device_info["port"],
-            repeat=3,
-            timeout=50,
+            number=number,
+            repeat=repeat,
+            min_repeat_ms=min_repeat_ms,
+            timeout=timeout,
         )
         target = tvm.target.Target(device_info["target"])
         target_host = tvm.target.Target(device_info["host"])
     elif "local" == device_info["host_type"]:
-        runner = auto_scheduler.LocalRunner(repeat=10, enable_cpu_cache_flush=True)
-        target = device_info["target"]
-        target_host = device_info["host"]
+        runner = auto_scheduler.LocalRunner(
+            number=number,
+            repeat=repeat,
+            min_repeat_ms=min_repeat_ms,
+            timeout=timeout,
+            enable_cpu_cache_flush=False
+        )
+        target = tvm.target.Target(device_info["target"])
+        target_host = tvm.target.Target(device_info["host"])
     else:
-        raise ValueError(f"Unknwon host type: {device_info['host_type']}")
+        raise ValueError(f"Unknown host type: {device_info['host_type']}")
     return runner, target, target_host
 
 

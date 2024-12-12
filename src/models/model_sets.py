@@ -11,21 +11,25 @@ from src.models.models import *
 torch.hub._validate_not_a_forked_repo = lambda a, b, c: True
 
 chocolate = {
-    # CNNs
-    # "resnet18": torchvision.models.resnet18,
+
     "resnet50": torchvision.models.resnet50,
-    "alexnet": torchvision.models.alexnet,
-    "vgg16": torchvision.models.vgg16,
+    "mobilenetv2": torchvision.models.mobilenet_v2,
+
+    # # CNNs
+    # "resnet18": torchvision.models.resnet18,
+    # "resnet50": torchvision.models.resnet50,
+    # "alexnet": torchvision.models.alexnet,
+    # # "vgg16": torchvision.models.vgg16,
     # "mobilenetv2": torchvision.models.mobilenet_v2,
-    # "efficentnetb0": torchvision.models.efficientnet_b0,
-    # "efficentnetb4": torchvision.models.efficientnet_b4,
-    "googlenet": torchvision.models.googlenet,
+    # # "efficentnetb0": torchvision.models.efficientnet_b0,
+    # # "efficentnetb4": torchvision.models.efficientnet_b4,
+    # "googlenet": torchvision.models.googlenet,
     # "mnasnet1_0": torchvision.models.mnasnet1_0,
-    # transformers
-    # "bert-base-uncased-seq_class-128": get_bert_hf_trans,
-    # "bert-base-uncased-seq_class-256": get_bert_hf_trans,
-    # "mobilebert-base-uncased-seq_class-128": get_mobilebert_hf_trans,
-    # "mobilebert-base-uncased-seq_class-256": get_mobilebert_hf_trans,
+    # # transformers
+    # # "bert-base-uncased-seq_class-128": get_bert_hf_trans,
+    # # "bert-base-uncased-seq_class-256": get_bert_hf_trans,
+    # # "mobilebert-base-uncased-seq_class-128": get_mobilebert_hf_trans,
+    # # "mobilebert-base-uncased-seq_class-256": get_mobilebert_hf_trans,
 
 }
 

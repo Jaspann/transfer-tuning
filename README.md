@@ -1,4 +1,4 @@
-<br />
+<!-- <br />
 <div align="center">
     <img src="./docs/acm_available_1.1.png" alt="acm available" width="80" height="80">
     <img src="./docs/artifacts_evaluated_reusable_v1_1.png" alt="acm evaluated and reusable" width="80" height="80">
@@ -10,9 +10,9 @@
     Code artifact for our PACT 2022 paper.
     <br />
   </p>
-</div>
+</div> -->
 
-------------
+<!-- ------------
 
 Find the [arXiv version here](https://arxiv.org/abs/2201.05587), and the [ACM version here](https://dl.acm.org/doi/10.1145/3559009.3569682).
 
@@ -34,29 +34,42 @@ Find the [arXiv version here](https://arxiv.org/abs/2201.05587), and the [ACM ve
 Guide
 ------------
 
-This project works best in a Docker container, for which we provide a basic template for.
+This project works best in a Docker container, for which we provide a basic template for. -->
+
+# Fork of Transfer-Tuning for CMPE-214 - GPU Arch and Prog 
+
+This is a modified README that streamlines instrucions for the project.
+
+The original repo can be found here: https://github.com/gicLAB/transfer-tuning/tree/main
+
+Before running, make sure you have the following configuration:
+- Ubuntu 20.04
+- Docker
+- nvidia-docker2
 
 You can build and run the container with:
 
-Transfer-Tuning with Ansor:
+Transfer-Tuning with Droplet:
 ``` sh
-docker build -t tt_artifact:latest -f docker/Dockerfile.main_cpu .
-docker run \
-    -v ${PWD}/:/workspace \
-    -ti tt_artifact:latest bash -i
-```
-
-Transfer-Tuning with Ansor + AutoTVM:
-``` sh
-docker build -t tt_artifact_combo:latest -f docker/Dockerfile.main_cpu_combo .
-docker run \
-    -v ${PWD}/:/workspace \
-    -ti tt_artifact_combo:latest bash -i
+sudo docker build -t transfer-tuning/tvm:latest -f docker/Dockerfile . 
+sudo docker run \
+    --gpus all \ 
+    --ipc=host \
+    -e NVIDIA_VISIBLE_DEVICES=1 \
+    -v ${PWD}/:/workspace \    
+    -p 8888:8888 -p 9190:9190 \
+    -ti transfer-tuning-three/tvm:latest bash -i      
 ```
 
 This will install the required dependencies, build TVM, and ensure most environment variables are set correctly.
 
-Details on running the system:
+### Run all the commands at once:
+
+```sh
+python3 src/scripts/tt_with_droplet.py
+```
+
+### Run the commands individually:
 
 ``` sh
 # Export models to TVM format
@@ -67,13 +80,13 @@ python3 src/scripts/generate_model_set.py \
 python3 src/scripts/autoschedule_models.py \
    --model_path models/chocolate \
    --ntrials 5000 \
-   --device_name xeon_cpu \
+   --device_name my_gpu \
    --output_dir data/raw/chocolate
 
 # Run Droplet Search
 python3 src/scripts/autoschedule_models.py \
    --model_path models/chocolate \
-   --device_name xeon_cpu \
+   --device_name my_gpu \
    --output_dir data/raw/chocolate \
    --droplet_search
 
@@ -85,7 +98,7 @@ python3 src/scripts/distil_logfiles.py \
 # save relevant task info for each model (e.g. kernel names)
 python3 src/scripts/generate_task_info.py \
     --network_dir models/chocolate \
-    --device_name xeon_cpu
+    --device_name my_gpu
 
 # split logfiles into individual workloads
 python3 src/scripts/split_logfiles.py \
@@ -99,13 +112,15 @@ python3 src/scripts/split_logfiles.py \
 #    --tt_model_name efficentnetb4 \
 #    --split_log_file_dir data/processed/split_logs/chocolate \
 #    --model_path models/chocolate \
-#    --device_name xeon_cpu
+#    --device_name my_gpu
 
 # run TT with all of our models
 python3 src/scripts/tt_multi_models_pact.py \
     --split_log_file_dir data/processed/split_logs/chocolate/ \
     --model models/chocolate \
-    --device_name xeon_cpu
+    --device_name my_gpu
+
+## NOTE: we stop here as we don't want to run Ansor unnessesarally
 
 # Compare how well Ansor performs given the same search time
 # as well as go beyond see how much time is required to match our time
@@ -115,7 +130,7 @@ python3 src/scripts/autoschedule_models.py \
      --model_path models/chocolate \
      --output_dir data/raw/chocolate_tt_ansor \
      --ntrials 8000 \
-     --device_name xeon_cpu \
+     --device_name my_gpu \
      --tt_path /workspace/data/results/tt_multi_models \
      --minute_check
 
