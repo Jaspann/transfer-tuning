@@ -1,0 +1,124 @@
+{
+  "googlenet": {
+    "0": {
+      "tt_time": 88.037391,
+      "search_time": 7.772250652313232,
+      "best_wkl_inf_times": {
+        "standalone": 7.772250652313232,
+        "first_measure": -2.1457672119140625e-06
+      },
+      "mapping": {
+        "629d51208b15f546624bafac3896f391153d36205ef063119b252773a4033fdb": "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8",
+        "a24be6059f9762d679957e2df2f07c23a73396905fd32c76d8a6cc43b9cf1200": null,
+        "2fe75ae4424464edd213ad3f03027f49922fd6da2fea36b10ecfc7709679e286": null,
+        "588f41c98daed7f04793a200ceb45a8075695fc081c70417e33c39c622ded330": null,
+        "7e1fa160db2da3629d2eb77e308599466081f18a7225c1e487c115fda3c2a0cb": "ae9f61b6512c61cab79956e77962f1084efd143e4436f334534da64f1658af48",
+        "b32ef5db0cff56d764e8ae99ef98c456e52dd3e52ebe040cd9b25ca552cf5a06": null,
+        "7c2a71ffd8710e4bfd6120de1a4da80b8fccb43d2014cca3fe8e3e6c21665555": null,
+        "154af0fdb2a8610964ce4c915240e27a2ff6e9a4f2926f41f7d02a403bc6bc16": null,
+        "0e6d5f44e19856d1945935173e052589a829034fe46244f5305ba0e95054688a": null
+      },
+      "wkl_standalone_times": {
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_629d51": {
+          "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8": 3.281067,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_1_a24be6": {
+          "Untuned": 1000,
+          "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad": 10000000000000.0
+        },
+        "vm_mod_fused_nn_max_pool2d_2_2fe75a": {
+          "Untuned": 1000,
+          "a3ab7c60e1d9ec721bb032e1293257ce8b3b1d771dc858892951bb0d99748271": 10000000000000.0
+        },
+        "vm_mod_fused_nn_max_pool2d_1_588f41": {
+          "Untuned": 1000,
+          "1b9f11086fabedf35af11150ce8fae66dd2a47042f21c483415f046d887b327a": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_2_7e1fa1": {
+          "ae9f61b6512c61cab79956e77962f1084efd143e4436f334534da64f1658af48": 7.08329,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_3_b32ef5": {
+          "Untuned": 1000,
+          "40cd34de439b3a435078cdeadd1a6846d6eb210bcb925b89318ab7ef99c7d93d": 10000000000000.0
+        },
+        "vm_mod_fused_nn_avg_pool2d_7c2a71": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_154af0": {
+          "Untuned": 1000,
+          "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_4_0e6d5f": {
+          "Untuned": 1000,
+          "49dab8142d07ef9adc05ed7c8c9b766c6d7434c9e7a8e1e4410a50433c4a45f7": 10000000000000.0
+        }
+      }
+    },
+    "avg": {
+      "tt_time": 88.037391,
+      "search_time": 7.772250652313232
+    }
+  },
+  "resnet50": {
+    "0": {
+      "tt_time": 90.27094766666666,
+      "search_time": 8.412574052810669,
+      "best_wkl_inf_times": {
+        "standalone": 8.412574052810669,
+        "first_measure": -4.76837158203125e-07
+      },
+      "mapping": {
+        "629d51208b15f546624bafac3896f391153d36205ef063119b252773a4033fdb": "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8",
+        "a24be6059f9762d679957e2df2f07c23a73396905fd32c76d8a6cc43b9cf1200": null,
+        "2fe75ae4424464edd213ad3f03027f49922fd6da2fea36b10ecfc7709679e286": null,
+        "588f41c98daed7f04793a200ceb45a8075695fc081c70417e33c39c622ded330": null,
+        "7e1fa160db2da3629d2eb77e308599466081f18a7225c1e487c115fda3c2a0cb": null,
+        "b32ef5db0cff56d764e8ae99ef98c456e52dd3e52ebe040cd9b25ca552cf5a06": null,
+        "7c2a71ffd8710e4bfd6120de1a4da80b8fccb43d2014cca3fe8e3e6c21665555": null,
+        "154af0fdb2a8610964ce4c915240e27a2ff6e9a4f2926f41f7d02a403bc6bc16": null,
+        "0e6d5f44e19856d1945935173e052589a829034fe46244f5305ba0e95054688a": null
+      },
+      "wkl_standalone_times": {
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_629d51": {
+          "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8": 3.282398,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_1_a24be6": {
+          "Untuned": 1000,
+          "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad": 10000000000000.0
+        },
+        "vm_mod_fused_nn_max_pool2d_2_2fe75a": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_1_588f41": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_2_7e1fa1": {
+          "Untuned": 1000,
+          "1d37730be18dfa502786def8b173bd01cb79d5eb6d2ea06c1a930a0acd1e309f": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_3_b32ef5": {
+          "Untuned": 1000,
+          "991709144bc43507237002f1035795b7549c1a5ef56f615865e4ed22d2e29da8": 10000000000000.0
+        },
+        "vm_mod_fused_nn_avg_pool2d_7c2a71": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_154af0": {
+          "Untuned": 1000,
+          "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_4_0e6d5f": {
+          "Untuned": 1000,
+          "cb7411fadfdc80a3eecf89d87be2a4a368d4f3d134b73c6f916b8495b9557bd3": 10000000000000.0
+        }
+      }
+    },
+    "avg": {
+      "tt_time": 90.27094766666666,
+      "search_time": 8.412574052810669
+    }
+  }
+}

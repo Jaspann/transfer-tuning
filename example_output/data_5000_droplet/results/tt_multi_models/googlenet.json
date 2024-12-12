@@ -1,0 +1,544 @@
+{
+  "resnet50": {
+    "0": {
+      "tt_time": 63.42133400000001,
+      "search_time": 27.149555206298828,
+      "best_wkl_inf_times": {
+        "standalone": 27.149555206298828,
+        "first_measure": -7.152557373046875e-07
+      },
+      "mapping": {
+        "d8def39329c100fdb5dd55ca440b195075d85eda38429036e691e481624e0a9a": null,
+        "240e9c4a6a56a33f24b7c67c85bba476b29797a0a1a731fba004fac1b526cbd2": null,
+        "aa975fd0ed667e8c3f91a4652825f50c33c9805c08d0cbb2d8692f2005877f22": null,
+        "4d9296f95155885d9cb1807f43b1845e4b28ce43c195c01ec8d577516ac392b8": null,
+        "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8": "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8",
+        "7196ade5bff303716a38605361cdfb4e62121045d2fb32c096d738f7d2128355": null,
+        "1ca7aac622d9beedf99a37f9ce7fef7c86455114037c5aa67fc87459af759c71": null,
+        "c6dd0f1f9af4341b8ab71dc1d35a93146f22fde2f269b1919350ce9c89b08e82": "3107d218403f3ab93da8bb8818b3967d9811980b16da07715d7248b516cf7c51",
+        "189e12a3f1cccb7e6db6688217620d11463abad0d5df08f8602a4a2255af29b6": null,
+        "c442bad113fcc808b7f57ebfe3972bba2334ac2fa51c9d94f5275ceaa1fadaa3": null,
+        "a3ab7c60e1d9ec721bb032e1293257ce8b3b1d771dc858892951bb0d99748271": null,
+        "8561b7364ffe4d26d8c9b4efbc00fa44b1c2a7233c30dcde417169a163fb0586": null,
+        "c1b908a3f2bcafc7ac4fe6938c9968cb8231d81ea9ce02ed79ca7fd2e396b096": null,
+        "dfb512d9ee4f2f5ab5bab6b7dc638f8eaae1e8c70d58d83d0b1358624f20a8e8": "ec3881335207968a43140696d14483a682886dcd44de2a64a751490ab8abaed3",
+        "f6ddc1fe177f70c02b712902aa70dc16dbb5980d57e2bdb8cfce38705436e8df": null,
+        "36f9a52c5a91ffe9d7742f0789a84c4a056a94f7f1456bf0690be20db886bdaf": null,
+        "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad": "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad",
+        "112e929563ea66495bfbedbc9ef5dca0dc19e058ee97b65665302a08a7d7a8f9": null,
+        "fea10ec88108450bd0e58d583aea7579dde66e45fadadd4d05f57c27aa55da4d": null,
+        "1cfff312b022f13f1319613d928e1c802c59377b3c254841690b1e52ac22b2b8": "cc3a72797777035d3ce3edd7353c1f36cbfec239f57a8e9fcbabf3ea1d9f7d7f",
+        "e437f551e55a6c8cd387e3ed45b6b9e3cde5e5acc85bf2c304e8f1132095ea65": null,
+        "a113eb74316637b3dfd448772284ae9132504254ebe057a497193d655019fd3d": null,
+        "6103355952783ec7fae84cc69e43fa23040612c9b91bc4cf2a74ff88d75bdd71": null,
+        "9252e879cd0c13c82ae95105175c541d694c8858884f0fc84499f666339b61fa": null,
+        "4190f398e1c7db4f9dc056f8d55325fd9e77789dd3c1dfbd94b363ac85d3dc7e": null,
+        "1b9f11086fabedf35af11150ce8fae66dd2a47042f21c483415f046d887b327a": null,
+        "cf9aeb281c37d00b0d8b7aa952f9543705fcfad146424971ce0930a62dc5a15f": null,
+        "a8608b005061eb32a6e2ee34763cc1311c6f07e15e954a8268c22d2e355880ce": null,
+        "ae9f61b6512c61cab79956e77962f1084efd143e4436f334534da64f1658af48": "1d37730be18dfa502786def8b173bd01cb79d5eb6d2ea06c1a930a0acd1e309f",
+        "aacf9597dd9c25c3c5a8cca1d67e863e27081bc23daa1c9ee21112198319054a": null,
+        "93f16467eeba5f2181de833334e8c9598470d28a9abea31836b01cef8ba1344d": null,
+        "8a830e2206b65ca5234d815d32b6de02eb23025faa69b723fd870c0719bf8037": null,
+        "0060208def43efb71971446a0daf803b8dc0f228a2b8600638a1c47e64a0658e": null,
+        "62604481e294f48ea583dd2b383b1d80c1947dc2f4a34a7ea925b09c617f6dc1": null,
+        "a36fc5e263cc10377a23796ed45135578410afb7d85a91444302871d0f06766d": "7e2341395b792ccfc6c1781fa24912bcd527d2813f0fa66b63834937938de463",
+        "c07fa26cb386b187a34fe2ac34103e62eadb200cdf87ddf148211674c4f366ce": null,
+        "91ec07b866676db3cfb20bbbdf56eecb06b5b90edca3b5065624f7ff3f7a33ba": null,
+        "eed9379a89a8fde726cbeb01c7050191698b2f2f078111aab97b324d0314ef04": null,
+        "eccc82c336354ff0de747156dfce1ef89ab705604b9d9f1af0057a67e271b6d9": null,
+        "0317fe2c51c617667cffe3abf35c05becc7a98bf62fcdb7f15095bcc52a9ba9d": null,
+        "6873a1c00620e196938b041d3e1b930ca4705334bcb2ca6770adb7dbf7322593": null,
+        "ba493e86e51fc4e845a6112c2f08a7fb7f27c211cf64b5eb008478fd53e0f8c3": null,
+        "40cd34de439b3a435078cdeadd1a6846d6eb210bcb925b89318ab7ef99c7d93d": "991709144bc43507237002f1035795b7549c1a5ef56f615865e4ed22d2e29da8",
+        "f82d936a736878161795324a508a8ef6793586aa64909f201b07b0407af3d55b": null,
+        "3b05199722444b5d7e019f911c063d9987fb9b1719d12e54503185736c9d893c": null,
+        "21286c261d9896471826c03771584f91c283abb0727b216443665d9bb15e1592": "a2c72a86aaf737794b9ea7756d951a5d2f8c6ee3aafd218a088bbe45eeecbb15",
+        "0ae7da089f26095e5f8f2fc1d916d96cd41edcc8ed7cfb8e79b4bc844f41ac48": null,
+        "e6d330700b5f42db03a4017419760437aed67c6f092a886a75bbace05d25ac92": null,
+        "cca04296ce04927f350f21a35252f31e87d40d9173f5fe1074e4ec02d16d5485": null,
+        "ce03f360e87d2c7308420ccef196d4f6a1efc09f87479dd490b498d92c5afd90": null,
+        "fe39a9b15875b7717c4979df161d02243d932f402b2e01a1b2279fe6fceddde7": null,
+        "a983cbce990260af87df3e0a8f5bc07042d5a332684f379c40d002991ac2a901": null,
+        "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a": "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a",
+        "49dab8142d07ef9adc05ed7c8c9b766c6d7434c9e7a8e1e4410a50433c4a45f7": "cb7411fadfdc80a3eecf89d87be2a4a368d4f3d134b73c6f916b8495b9557bd3",
+        "d9e6806dc1da45abcd00b23048036cda18d7292da8e9ec575a7809ba3df7b98b": null,
+        "1d73ab303557b69557f7838fed48ff6ea5f6a8bc7a1654040830c78f761a7227": null,
+        "5dbdb1f56d19f46bc221df3d6e3a4230817465db0492d7c917d7cce5bf675923": null,
+        "3ad4b112b2af503018f22e6163e3a69afd60ffebb28de6e333d818b4320ba504": null,
+        "79368ed9727b11d3e0e15bea97a43f68251372120047d594589fe20a9a52c927": "51832de56566932c6bfdd3e39312ce8dc391bee5ff1b3a7d392e3cc3277847ec",
+        "5053ece7e8d268fe75e0d578d83a11a13e4cda4eb7bd1c438019930fd85b6517": null
+      },
+      "wkl_standalone_times": {
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_12_d8def3": {
+          "Untuned": 1000,
+          "7953ac2747ad0c7bd5ed31c76e4b3a00363d900890bdd0982b448f49c3a4fd96": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_47_240e9c": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_6_aa975f": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_10_4d9296": {
+          "Untuned": 1000,
+          "5d67dd38232f0185b36834ffc17bb1a3205863c000ff0fdbb3dede3fb789a345": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_91732c": {
+          "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8": 1.106457,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_28_7196ad": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_45_1ca7aa": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_5_c6dd0f": {
+          "3107d218403f3ab93da8bb8818b3967d9811980b16da07715d7248b516cf7c51": 8.044941,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_26_189e12": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_43_c442ba": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_2_a3ab7c": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_24_8561b7": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_41_c1b908": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_global_avg_pool2d_dfb512": {
+          "ec3881335207968a43140696d14483a682886dcd44de2a64a751490ab8abaed3": 0.003226,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_9_f6ddc1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_22_36f9a5": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_1_c23f67": {
+          "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad": 0.446198,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_20_112e92": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_38_fea10e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_6_1cfff3": {
+          "cc3a72797777035d3ce3edd7353c1f36cbfec239f57a8e9fcbabf3ea1d9f7d7f": 0.095995,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_5_e437f5": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_19_a113eb": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_36_610335": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_17_9252e8": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_34_4190f3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_1_1b9f11": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_15_cf9aeb": {
+          "Untuned": 1000,
+          "baa8c4fa53edfca0d06eb3de40dc2dc70cb62b84f70a12634bf430cf4b4063e8": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_32_a8608b": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_2_ae9f61": {
+          "1d37730be18dfa502786def8b173bd01cb79d5eb6d2ea06c1a930a0acd1e309f": 7.178913,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_13_aacf95": {
+          "Untuned": 1000,
+          "c4103b6a885e448b4fa2ffb4487e185c6e6ef406dab844ccf9d2dffb78b12798": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_30_93f164": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_8_8a830e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_48_006020": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_11_626044": {
+          "Untuned": 1000,
+          "fde8b7c8fb6ba1fcf0e3f26c0acc972db980b2c2e9a648a115a13e69ad545516": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_7_a36fc5": {
+          "7e2341395b792ccfc6c1781fa24912bcd527d2813f0fa66b63834937938de463": 0.109559,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_29_c07fa2": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_46_91ec07": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_4_eed937": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_27_eccc82": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_44_0317fe": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_25_6873a1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_42_ba493e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_3_40cd34": {
+          "991709144bc43507237002f1035795b7549c1a5ef56f615865e4ed22d2e29da8": 0.596026,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_40_f82d93": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_23_3b0519": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_8_21286c": {
+          "a2c72a86aaf737794b9ea7756d951a5d2f8c6ee3aafd218a088bbe45eeecbb15": 0.060916,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_7_0ae7da": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_39_e6d330": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_21_cca042": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_37_ce03f3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_18_fe39a9": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_35_a983cb": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_eaddea": {
+          "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a": 0.091808,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_4_49dab8": {
+          "cb7411fadfdc80a3eecf89d87be2a4a368d4f3d134b73c6f916b8495b9557bd3": 0.330321,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_3_d9e680": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_16_1d73ab": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_33_5dbdb1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_31_3ad4b1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_14_79368e": {
+          "51832de56566932c6bfdd3e39312ce8dc391bee5ff1b3a7d392e3cc3277847ec": 0.224952,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_9_5053ec": {
+          "Untuned": 1000,
+          "6b47da9b82d73f9fc94306bafca255cf7f0d82f7e01dc45d535c777ab1f9b48e": 10000000000000.0
+        }
+      }
+    },
+    "avg": {
+      "tt_time": 63.42133400000001,
+      "search_time": 27.149555206298828
+    }
+  },
+  "alexnet": {
+    "0": {
+      "tt_time": 69.35644333333333,
+      "search_time": 7.6615095138549805,
+      "best_wkl_inf_times": {
+        "standalone": 7.6615095138549805,
+        "first_measure": -4.76837158203125e-07
+      },
+      "mapping": {
+        "d8def39329c100fdb5dd55ca440b195075d85eda38429036e691e481624e0a9a": null,
+        "240e9c4a6a56a33f24b7c67c85bba476b29797a0a1a731fba004fac1b526cbd2": null,
+        "aa975fd0ed667e8c3f91a4652825f50c33c9805c08d0cbb2d8692f2005877f22": null,
+        "4d9296f95155885d9cb1807f43b1845e4b28ce43c195c01ec8d577516ac392b8": null,
+        "91732c879c7b04f11372f9240e45f80ce435dd0edecf5f52c3188ea6b16141c8": "629d51208b15f546624bafac3896f391153d36205ef063119b252773a4033fdb",
+        "7196ade5bff303716a38605361cdfb4e62121045d2fb32c096d738f7d2128355": null,
+        "1ca7aac622d9beedf99a37f9ce7fef7c86455114037c5aa67fc87459af759c71": null,
+        "c6dd0f1f9af4341b8ab71dc1d35a93146f22fde2f269b1919350ce9c89b08e82": null,
+        "189e12a3f1cccb7e6db6688217620d11463abad0d5df08f8602a4a2255af29b6": null,
+        "c442bad113fcc808b7f57ebfe3972bba2334ac2fa51c9d94f5275ceaa1fadaa3": null,
+        "a3ab7c60e1d9ec721bb032e1293257ce8b3b1d771dc858892951bb0d99748271": null,
+        "8561b7364ffe4d26d8c9b4efbc00fa44b1c2a7233c30dcde417169a163fb0586": null,
+        "c1b908a3f2bcafc7ac4fe6938c9968cb8231d81ea9ce02ed79ca7fd2e396b096": null,
+        "dfb512d9ee4f2f5ab5bab6b7dc638f8eaae1e8c70d58d83d0b1358624f20a8e8": null,
+        "f6ddc1fe177f70c02b712902aa70dc16dbb5980d57e2bdb8cfce38705436e8df": null,
+        "36f9a52c5a91ffe9d7742f0789a84c4a056a94f7f1456bf0690be20db886bdaf": null,
+        "c23f67902a31ebf8b2c48b0a2a6e169a153af137d0d3c254dc5b56ab43cf0aad": null,
+        "112e929563ea66495bfbedbc9ef5dca0dc19e058ee97b65665302a08a7d7a8f9": null,
+        "fea10ec88108450bd0e58d583aea7579dde66e45fadadd4d05f57c27aa55da4d": null,
+        "1cfff312b022f13f1319613d928e1c802c59377b3c254841690b1e52ac22b2b8": null,
+        "e437f551e55a6c8cd387e3ed45b6b9e3cde5e5acc85bf2c304e8f1132095ea65": null,
+        "a113eb74316637b3dfd448772284ae9132504254ebe057a497193d655019fd3d": null,
+        "6103355952783ec7fae84cc69e43fa23040612c9b91bc4cf2a74ff88d75bdd71": null,
+        "9252e879cd0c13c82ae95105175c541d694c8858884f0fc84499f666339b61fa": null,
+        "4190f398e1c7db4f9dc056f8d55325fd9e77789dd3c1dfbd94b363ac85d3dc7e": null,
+        "1b9f11086fabedf35af11150ce8fae66dd2a47042f21c483415f046d887b327a": null,
+        "cf9aeb281c37d00b0d8b7aa952f9543705fcfad146424971ce0930a62dc5a15f": null,
+        "a8608b005061eb32a6e2ee34763cc1311c6f07e15e954a8268c22d2e355880ce": null,
+        "ae9f61b6512c61cab79956e77962f1084efd143e4436f334534da64f1658af48": "7e1fa160db2da3629d2eb77e308599466081f18a7225c1e487c115fda3c2a0cb",
+        "aacf9597dd9c25c3c5a8cca1d67e863e27081bc23daa1c9ee21112198319054a": null,
+        "93f16467eeba5f2181de833334e8c9598470d28a9abea31836b01cef8ba1344d": null,
+        "8a830e2206b65ca5234d815d32b6de02eb23025faa69b723fd870c0719bf8037": null,
+        "0060208def43efb71971446a0daf803b8dc0f228a2b8600638a1c47e64a0658e": null,
+        "62604481e294f48ea583dd2b383b1d80c1947dc2f4a34a7ea925b09c617f6dc1": null,
+        "a36fc5e263cc10377a23796ed45135578410afb7d85a91444302871d0f06766d": null,
+        "c07fa26cb386b187a34fe2ac34103e62eadb200cdf87ddf148211674c4f366ce": null,
+        "91ec07b866676db3cfb20bbbdf56eecb06b5b90edca3b5065624f7ff3f7a33ba": null,
+        "eed9379a89a8fde726cbeb01c7050191698b2f2f078111aab97b324d0314ef04": null,
+        "eccc82c336354ff0de747156dfce1ef89ab705604b9d9f1af0057a67e271b6d9": null,
+        "0317fe2c51c617667cffe3abf35c05becc7a98bf62fcdb7f15095bcc52a9ba9d": null,
+        "6873a1c00620e196938b041d3e1b930ca4705334bcb2ca6770adb7dbf7322593": null,
+        "ba493e86e51fc4e845a6112c2f08a7fb7f27c211cf64b5eb008478fd53e0f8c3": null,
+        "40cd34de439b3a435078cdeadd1a6846d6eb210bcb925b89318ab7ef99c7d93d": null,
+        "f82d936a736878161795324a508a8ef6793586aa64909f201b07b0407af3d55b": null,
+        "3b05199722444b5d7e019f911c063d9987fb9b1719d12e54503185736c9d893c": null,
+        "21286c261d9896471826c03771584f91c283abb0727b216443665d9bb15e1592": null,
+        "0ae7da089f26095e5f8f2fc1d916d96cd41edcc8ed7cfb8e79b4bc844f41ac48": null,
+        "e6d330700b5f42db03a4017419760437aed67c6f092a886a75bbace05d25ac92": null,
+        "cca04296ce04927f350f21a35252f31e87d40d9173f5fe1074e4ec02d16d5485": null,
+        "ce03f360e87d2c7308420ccef196d4f6a1efc09f87479dd490b498d92c5afd90": null,
+        "fe39a9b15875b7717c4979df161d02243d932f402b2e01a1b2279fe6fceddde7": null,
+        "a983cbce990260af87df3e0a8f5bc07042d5a332684f379c40d002991ac2a901": null,
+        "eaddea81c4b85f806376fd3b9ada76ab97bb8a88a68a5568a45aa7fb13cbbe3a": null,
+        "49dab8142d07ef9adc05ed7c8c9b766c6d7434c9e7a8e1e4410a50433c4a45f7": null,
+        "d9e6806dc1da45abcd00b23048036cda18d7292da8e9ec575a7809ba3df7b98b": null,
+        "1d73ab303557b69557f7838fed48ff6ea5f6a8bc7a1654040830c78f761a7227": null,
+        "5dbdb1f56d19f46bc221df3d6e3a4230817465db0492d7c917d7cce5bf675923": null,
+        "3ad4b112b2af503018f22e6163e3a69afd60ffebb28de6e333d818b4320ba504": null,
+        "79368ed9727b11d3e0e15bea97a43f68251372120047d594589fe20a9a52c927": null,
+        "5053ece7e8d268fe75e0d578d83a11a13e4cda4eb7bd1c438019930fd85b6517": null
+      },
+      "wkl_standalone_times": {
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_12_d8def3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_47_240e9c": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_6_aa975f": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_10_4d9296": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_91732c": {
+          "629d51208b15f546624bafac3896f391153d36205ef063119b252773a4033fdb": 16.437915,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_28_7196ad": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_45_1ca7aa": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_5_c6dd0f": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_26_189e12": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_43_c442ba": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_2_a3ab7c": {
+          "Untuned": 1000,
+          "2fe75ae4424464edd213ad3f03027f49922fd6da2fea36b10ecfc7709679e286": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_24_8561b7": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_41_c1b908": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_global_avg_pool2d_dfb512": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_9_f6ddc1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_22_36f9a5": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_1_c23f67": {
+          "Untuned": 1000,
+          "a24be6059f9762d679957e2df2f07c23a73396905fd32c76d8a6cc43b9cf1200": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_20_112e92": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_38_fea10e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_6_1cfff3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_5_e437f5": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_19_a113eb": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_36_610335": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_17_9252e8": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_34_4190f3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_1_1b9f11": {
+          "Untuned": 1000,
+          "588f41c98daed7f04793a200ceb45a8075695fc081c70417e33c39c622ded330": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_15_cf9aeb": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_32_a8608b": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_2_ae9f61": {
+          "7e1fa160db2da3629d2eb77e308599466081f18a7225c1e487c115fda3c2a0cb": 16.745607,
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_13_aacf95": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_30_93f164": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_8_8a830e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_48_006020": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_11_626044": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_7_a36fc5": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_29_c07fa2": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_46_91ec07": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_4_eed937": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_27_eccc82": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_44_0317fe": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_25_6873a1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_42_ba493e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_3_40cd34": {
+          "Untuned": 1000,
+          "b32ef5db0cff56d764e8ae99ef98c456e52dd3e52ebe040cd9b25ca552cf5a06": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_40_f82d93": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_23_3b0519": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_8_21286c": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_7_0ae7da": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_39_e6d330": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_21_cca042": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_37_ce03f3": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_18_fe39a9": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_35_a983cb": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_max_pool2d_eaddea": {
+          "Untuned": 1000,
+          "154af0fdb2a8610964ce4c915240e27a2ff6e9a4f2926f41f7d02a403bc6bc16": 10000000000000.0
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_4_49dab8": {
+          "Untuned": 1000,
+          "0e6d5f44e19856d1945935173e052589a829034fe46244f5305ba0e95054688a": 10000000000000.0
+        },
+        "vm_mod_fused_nn_max_pool2d_3_d9e680": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_16_1d73ab": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_33_5dbdb1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_31_3ad4b1": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_14_79368e": {
+          "Untuned": 1000
+        },
+        "vm_mod_fused_nn_contrib_conv2d_NCHWc_add_nn_relu_9_5053ec": {
+          "Untuned": 1000
+        }
+      }
+    },
+    "avg": {
+      "tt_time": 69.35644333333333,
+      "search_time": 7.6615095138549805
+    }
+  }
+}

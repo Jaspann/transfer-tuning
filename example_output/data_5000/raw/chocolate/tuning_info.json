@@ -1,0 +1,17 @@
+{
+  "resnet50": {
+    "tuned_time": 86.2678798,
+    "tuning_time": 2715.2125425338745,
+    "untuned_time": 91.58215766666667
+  },
+  "alexnet": {
+    "tuned_time": 76.39570143333333,
+    "tuning_time": 1778.0480680465698,
+    "untuned_time": 75.34595666666667
+  },
+  "googlenet": {
+    "tuned_time": 33.790049125,
+    "tuning_time": 3832.198981523514,
+    "untuned_time": 33.83537466666667
+  }
+}
