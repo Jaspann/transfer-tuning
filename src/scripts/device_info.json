@@ -7,7 +7,7 @@
 
     "my_gpu": {
         "host_type": "local",
-        "target": "cuda -arch=sm_61",
+        "target": "cuda",
         "host": "llvm"
     }
 
