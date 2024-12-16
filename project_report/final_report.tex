@@ -1,0 +1,117 @@
+\documentclass[conference]{IEEEtran}
+
+% \usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[inkscapelatex=false]{svg}
+\usepackage[sorting=none, style=ieee]{biblatex}
+\addbibresource{export-data.bib}
+\usepackage{listings}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Optimizing AI Scheduling on GPUs with Ansor, Transfer Tuning, and Droplet Search}  
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} William Parker}
+\IEEEauthorblockA{\textit{Charles W. Davidson College of Engineering} \\
+\textit{San José State University}\\
+San Jose, CA, USA \\
+william.j.parker@sjsu.edu}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Volodymyr Makarenko}
+\IEEEauthorblockA{\textit{Charles W. Davidson College of Engineering} \\
+\textit{San José State University}\\
+San Jose, CA, USA \\
+add you email plz}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Tarun Sanjeev Banala}
+\IEEEauthorblockA{\textit{Charles W. Davidson College of Engineering} \\
+\textit{San José State University}\\
+San Jose, CA, USA \\
+add you email plz}
+}
+
+\maketitle
+
+\begin{abstract}
+To interact with a GPU to run tasks such as AI models, the task need to be scheduled and coordinated with the rest of the device through the task scheduler. Libraries have been made that have hand tuned the kernel to run these models, but this tuning only exists for the set of GPUs the library supports and may not optimize novel operations. To solve this, work has been done to automatically search for optimizations for the kernel for any hardware and model combination. This work proposes combining two existing techniques, Droplet Search, and Transfer Tuning, on top of the Ansor task scheduler generator, to improve the speed at which the search finds optimizations. We find that combining these techniques can lead to improvements compared to when Transfer Tuning is used by itself with Ansor by up to 10\%. The source code is available at https://github.com/Jaspann/transfer-tuning.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Task Schedulers, Artificial Intelligence, Deep Learning, GPUs.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Individuals, academics, and industry all run different AI models on their devices.
+AI has become a part of many digital systems, and very in capabilities, such as natural language processing, image generation, object detection, facial recognition, and much more. Each model has different requirements to which it must devote resources, and each hardware component that the model may run on has different specifications. Optimizations that work on one GPU may not work on another, and due to the large verity of GPU models and options in building deep learning models, this creates a near impossible task to optimize every combination. This is especially noticeable for consumer-grade technology, where there is a large verity in hardware while end-user applications are quickly pushing AI small models to run locally rather than dealing with hosting the model centrally.
+
+Traditional solutions like cuDNN \cite{chetlur_cudnn_2014} propose libraries that optimize the most important parts of the AI models on the most popular GPUs. This paradigm does not work for everyone though, especially considering the rapid pace of AI development and deployment paired with growing historical and new options for compute. Developers using these models suffer as well, as they need to sacrifice options that in theory are a better fit for the system, but due to a lack of support cannot be implemented unless there is significant development put into these problems that are completely separate from the development of the system.
+
+In response, techniques such as Ansor \cite{zheng_ansor_2023} from the TVM (Tensor Virtual Machine) \cite{chen_tvm_2018} project have been developed to programmatically search for optimization techniques to apply to optimize the model with the task scheduler. Our research lies in testing combining optimization techniques in Ansor to measure how they compare apart versus when combined together. 
+
+\section{Background}
+In this section we will discuss the systems used to preform task scheduler optimization for deep learning models.
+
+\subsection{cuDNN}
+cuDNN \cite{chetlur_cudnn_2014} is NVIDIA's proprietary CUDA library for deep neural networks. It provides highly optimized implementations of common deep learning operations (such as convolutions, pooling, and activation functions) through pre-written kernels specifically tuned for NVIDIA GPUs. While cuDNN works with the CUDA runtime system for scheduling optimizations such as asynchronous kernel execution and computation/data transfer overlap, the actual task scheduling is primarily handled by CUDA itself. Being vendor-specific and closed-source, cuDNN's optimizations are limited to NVIDIA GPUs and specific hardware configurations. This creates limitations in two ways: first, the optimizations are only available for supported NVIDIA hardware, and second, the optimization strategies are pre-determined rather than adaptable to new scenarios. TVM's authors argue this approach is insufficient for the diverse range of modern deployment scenarios, where AI models need to run efficiently on a variety of hardware platforms beyond just NVIDIA GPUs.
+
+\subsection{Tensor program optimization}
+TVM and Ansor
+
+\cite{chen_tvm_2018}
+
+\section{Motivation}
+AI models are extremely complex, and running them takes significant processing. Optimizing inference is critical for deployment, and improvements at any level can save everyone time and money. To this end, we wanted to research optimizations for running models on the GPU. While looking into optimizations, we noticed the capabilities of Transfer Tuning \cite{gibson_transfer-tuning_2022} and Droplet Search \cite{canesche_droplet_2024, canesche_explore_2024}. Both tasks help optimize the use of the GPU on the system, so it appeared to be an applicable research topic.
+
+\section{Related Works}
+Further optimizing the task scheduler for deep learning tasks is a very active field of study. The two works, Transfer Tuning and Droplet Search, have had success in their own ways. This work takes the additional step of combining these two works on top of TVM to create a solution that has improvements beyond using either one alone.
+
+\cite{pytorch2}
+
+\subsection{Transfer Tuning}
+
+
+\subsection{Droplet Search}
+Droplet Search also selects the best candidate after tuning with Ansor as a starting point for it's optimization. Droplet Search works similar to gradient decent, where the search space is a multi-dimensional space with each potential variable for optimization as it's own dimension. The data from the optimal Ansor candidate is set as the starting point of this space, and the search attempts to optimize in a process iteratively moving through the search space, with each step only moving in one dimension at a time. The authors prove that this method works great for hardware optimizations, and the algorithm can always find the most optimal state, as they also prove that all minimas are equivalent in their space, removing the issue of local minimas. 
+
+The search is a greedy heuristic, optimizing the best variable at the current step. It looks at all of the closest options, searching within the neighborhood, to find the best option. The search is repeated until no variable provides a solution that produces an improved optimization. The algorithm supports parallel execution, making it efficient for hardware optimization tasks.
+
+\section{Design}
+To implement our test, we decided to start development based on Transfer Tuning's work. The Transfer Tuning paper provides a repository with clear and in-depth usage of TVM, making it a great starting point, as we could use the code directly for our purposes and allowed us to better understand the necessary concepts like TVM. From there, on TVM's Github page found pull request number 16499, which re-added Droplet Search into TVM for Ansor. The requests seemed to have been accepted by the authors of TVM but was not merged. We decided that fetching this branch and implementing the function would provide the best solution as it has been approved by the authors.
+
+Other changes such as editing the tests to interact with the GPU were done. This involved adding a new device in the \lstinline{device_info.json} folder that targets CUDA. To interact with the host device's GPU, during testing the host OS was Ubuntu and the CUDA Toolkit package was installed in addition to the nvidia-docker2 package. We updated how the \lstinline{Dockerfile.main_gpu} file is ran to use the newer configuration options to allow for GPU pass-though. 
+
+Once the configurations were completed, the environment was ready to start implementing the code. We follow the first few steps of downloading the models and running Ansor as prescribed in Transfer Tuning's README. In each step, the device name is set to use our CUDA device. Once that is complete, the model and data directories are copied so that one directory can run Droplet Search before both sets run Transfer Tuning and are evaluated. Droplet Search is implemented as a function that takes in the TVM log file of the model, and from this information appends the solution it found to the end of the log. The method implements Droplet Search as defined in the paper under using TVM v0.16. 
+
+After Droplet Search has been applied to the copy of the logs, both tests run the rest of the rest of the instructions. The only exception that is made is in the last two commands. These are not run, as Transfer Tuning ends with further tuning the original models with Ansor, for a comparison of how long Ansor would take to match the performance of Transfer Tuning. As that is not the point of this work, it was not done. Instead, the results can easily be seen by looking under \lstinline{data/results/tt_multi_models} for the Transfer Tuning with and without Droplet Search for each model combination.  
+
+\section{Evaluation}
+To evaluate this system, we needed to compare models that have pre-existing similarities for Transfer Tuning. These models should be similar architecturally in some way. The authors of Transfer Tuning have in the tests on their public code that AlexNet \cite{krizhevsky_imagenet_2012}, GoogleNet \cite{szegedy_going_2015}, and ResNet50 \cite{he_deep_2015} are used with each other, so we decided to test the same combinations. With these models, we ran Ansor, copied the data and run Droplet Search, and ran Transfer Tuning on both as described in the Design. 
+
+From this, we saw near identical results when looking at how AlexNet and ResNet50 preformed after Transfer Tuning when comparing the set with and without Droplet Search. As shown in Figure~\ref{fig}, in GoogleNet, we found inference running about 10\% faster when using Transfer Tuning with Droplet Search versus using Transfer Tuning alone. In the chart, the dark color represents the speed at which the model after transfer tuning against the labeled model was able to run the benchmark, while the brighter color shows the benchmark time when Droplet Search was applied to the same model combination. Applying ResNet50 to the GoogleNet model produced near-identical results, so Droplet Search did not have much of an effect with this combination, while it appears to have had an effect when applying Transfer Tuning via AlexNet on GoogleNet.
+
+% REMEMBER TO UNCOMMENT ONCE COMPLETE SO IT CAN BE PLACED CORRECTLY!!!
+% \begin{figure}[!b]
+% \centerline{\includesvg[width=0.9\columnwidth]{GoogleNet_Benchmark_Times.svg}}
+% \caption{Visualization of inference benchmark times on GoogleNet between using Transfer Tuning with and without Droplet Search.}
+% \label{fig}
+% \end{figure}
+
+\section{Case Studies}
+While building the tests, there were different solutions we needed to study to create our final result. 
+
+For our tests, we initially were also going to compare VGG-16 \cite{simonyan_very_2015}. While the authors seemed to not have much problem using it, even when we ran Transfer Tuning with nothing changed, TVM consistently threw errors when it reached VGG-16. As a result, we needed to remove this from our final test array.
+
+Droplet Search was incomparable with Ansor with the version of TVM that Transfer Tuning was using. TVM holds an internal state of what it has done, and uses it when interacting with logs, so generating the Ansor logs and then upgrading to TVM v0.16 to apply Droplet and going back down to TVM v0.8 for Transfer Tuning appears to be infeasible. To fix this, the TVM version needed to be upgraded from v0.8 to v0.16 inside the Docker container. This surprisingly did not cause much of a problem, as the only edits needed to upgrade were upgrading CMake and changing all references from \lstinline{tvm.relay.backend.compile_engine import} to \lstinline{tvm.relay.backend.te_compiler}. 
+
+While Transfer Tuning works on any device, some implementations for GPU support were not made public. This required reverse engineering the design to understand the requirements for implementing on the GPU as described in the Design section. Once GPU support was enabled, we saw small increases when the tests were being preformed, followed by periods of minimal utilization where it appeared that Ansor was calculating the results.
+
+\section{Conclusion}
+
+\printbibliography
+
+\end{document}
