@@ -4,6 +4,11 @@ This is a modified README that streamlines instrucions for the project.
 
 The original repo can be found here: https://github.com/gicLAB/transfer-tuning/tree/main
 
+Developed by:
+- William Parker: https://github.com/Jaspann
+- Volodymyr Makarenko: https://github.com/BobMak
+- Tarun Sanjeev Banala: https://github.com/btsanjeev 
+
 Before running, make sure you have the following configuration:
 - Ubuntu 20.04
 - Docker
